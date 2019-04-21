@@ -1,0 +1,63 @@
+set nocompatible
+
+runtime plugins.vim
+runtime helpers.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Global Vim config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Standard encoding should always be utf8
+set encoding=utf8
+
+" Default expected file type should be Unix
+set ffs=unix,dos,mac
+
+set clipboard^=unnamed
+
+" Vim should remember as many lines as possible
+set history=5000
+
+" Auto read when a file is changed from the outside
+set autoread
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Global vim fixes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Git exists, who needs swap files
+set nobackup
+set nowb
+set noswapfile
+
+" Remove annoying shit
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Avoid redrawing when running macros
+set lazyredraw 
+
+" Faster scrolling
+set ttyfast
+
+" Allow undo even after buffer/file closed
+try
+    set undodir=/home/generic/.vim_runtime/undo_dir
+    set undofile
+catch
+endtry
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Global Vim UX changes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Re-enable highlighting in terminal
+highlight Visual cterm=reverse ctermbg=NONE
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Global file bindings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+runtime binds.vim

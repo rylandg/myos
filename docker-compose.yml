@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  myos:
+    container_name: '${NAME:-default}'
+    image: 'myos:${TAG:-latest}'
+    tty: true
+    volumes:
+      -  "/var/run/docker.sock:/var/run/docker.sock"
+      # Default copy all ssh config at home of local to remote
+      -  "~/.ssh/:/home/generic/.ssh"
+      # Default copy all git config at home of local to remote
+      -  "~/.gitconfig/:/home/generic/.gitconfig"
+      # Use project-local zsh, tmux and vim settings
+      -  "./zsh/.zshenv:/home/generic/.zshenv"
+      -  "./zsh:/home/generic/.zsh_config"
+      -  "./tmux/tmux.conf:/home/generic/.tmux.conf"                   
+      -  "./tmux/tmux_saves:/home/generic/.tmux_saves"
+      -  "./vim:/home/generic/.vim_runtime:delegated"
+    ports:
+      - "2222:22"
+volumes:
+  volume-name:
+    driver: local

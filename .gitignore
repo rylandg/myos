@@ -1,0 +1,6 @@
+vim/undo_dir
+zsh/.zhistory
+*.zcompdump
+*.zwc
+tmux/tmux_saves
+*.zwc.old

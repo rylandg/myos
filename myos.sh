@@ -33,6 +33,12 @@ USER_DEFAULT=${DEFAULT_USER:-ubuntu}
 # For AWS ECR login
 if [ $COMMAND = "login" ]; then
   login
+elif [ $COMMAND = "init" ]; then
+  enforceArgs $# 2
+  mkdir $2
+  SCRIPT_DIR=$(dirname "$0")
+  cp -R $SCRIPT_DIR/zsh $SCRIPT_DIR/vim $SCRIPT_DIR/tmux $SCRIPT_DIR/.gitignore $SCRIPT_DIR/docker-compose.yml $2
+  exit 0
 # Builds the MYOS container
 elif [ $COMMAND = "build" ]; then
   enforceArgs $# 2
@@ -42,7 +48,7 @@ elif [ $COMMAND = "connect" ]; then
   SOCKET=$(docker-compose port myos 22)
   PORT="$(cut -d':' -f2 <<< $SOCKET)"
   shift 1
-  SSH_PARAMS="$@ -Y -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $PORT"
+  SSH_PARAMS="$@ -Y -tt -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $PORT"
   ssh $SSH_PARAMS $USER_DEFAULT@localhost
   exit 0
 elif [ $COMMAND = "create" ]; then

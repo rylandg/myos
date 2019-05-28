@@ -4,9 +4,7 @@ LABEL Maintainer="Ryland Goldstein <rylandgoldstein@gmail.com>"
 # Required for phusion, modifies PID 1
 CMD ["/sbin/my_init"]
 
-# Allows user to specify custom user name
-ARG DEFAULT_USER=ubuntu
-ENV DEFAULT_USER=$DEFAULT_USER
+ENV DEFAULT_USER=ubuntu
 
 # TODO: Fix locale for tmux so hack isn't needed
 ENV LC_ALL en_US.UTF-8
@@ -85,7 +83,6 @@ RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 RUN adduser --disabled-password --shell /usr/bin/zsh --gecos '' $DEFAULT_USER
 RUN adduser $DEFAULT_USER sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-RUN ln -s ${USER_HOME} /home/generic
 
 SHELL ["/usr/bin/zsh", "-c"]
 

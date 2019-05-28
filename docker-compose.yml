@@ -7,15 +7,15 @@ services:
     volumes:
       -  "/var/run/docker.sock:/var/run/docker.sock"
       # Default copy all ssh config at home of local to remote
-      -  "~/.ssh/:/home/generic/.ssh"
+      -  "~/.ssh/:/home/ubuntu/.ssh"
       # Default copy all git config at home of local to remote
-      -  "~/.gitconfig/:/home/generic/.gitconfig"
+      -  "~/.gitconfig/:/home/ubuntu/.gitconfig"
       # Use project-local zsh, tmux and vim settings
-      -  "./zsh/.zshenv:/home/generic/.zshenv"
-      -  "./zsh:/home/generic/.zsh_config"
-      -  "./tmux/tmux.conf:/home/generic/.tmux.conf"                   
-      -  "./tmux/tmux_saves:/home/generic/.tmux_saves"
-      -  "./vim:/home/generic/.vim_runtime:delegated"
+      -  "./zsh/.zshenv:/home/ubuntu/.zshenv"
+      -  "./zsh:/home/ubuntu/.zsh_config"
+      -  "./tmux/tmux.conf:/home/ubuntu/.tmux.conf"                   
+      -  "./tmux/tmux_saves:/home/ubuntu/.tmux_saves"
+      -  "./vim:/home/ubuntu/.vim_runtime:delegated"
     ports:
       - "2222:22"
 volumes:

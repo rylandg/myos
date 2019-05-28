@@ -44,7 +44,7 @@ set ttyfast
 
 " Allow undo even after buffer/file closed
 try
-    set undodir=/home/generic/.vim_runtime/undo_dir
+    set undodir=/home/ubuntu/.vim_runtime/undo_dir
     set undofile
 catch
 endtry

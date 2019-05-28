@@ -70,6 +70,6 @@ $ myos connect rysetup
 * Htop
 * Node12
 * Fully working colors
-* Does not run as PID 0
+* Does not run as PID 1
 * Non-root user
 * Uses ssh as entry allowing display server and remote usage

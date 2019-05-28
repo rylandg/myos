@@ -59,6 +59,55 @@ $ myos create rysetup
 $ myos connect rysetup
 ```
 
+## API
+
+### Init
+`myos init <dir>`
+
+Creates the initial templates that the default `docker-compose.yml` expects. These are...
+
+```bash
+# vim
+vim/binds.vim
+vim/helpers.vim
+vim/plugins.vim
+vim/vimrc
+# zsh
+zsh/.zlogin
+zsh/.zprofile
+zsh/.zshenv
+zsh/.zshrc
+# tmux
+tmux/tmux_saves
+tmux/install_tmux.sh
+tmux/tmux.conf
+```
+
+These files are empty (for the most part). You're expected to add your environment specific settings.
+
+### Create
+`myos create <name>`
+
+Runs `docker-compose up -d` from the current directory
+
+### Connect
+`myos connect`
+
+Connects to a previously created MyOS environment
+
+
+### Restart
+
+`myos restart <name>`
+
+Restart a previously created MyOS environment
+
+### Remove
+
+`myos remove <name>`
+
+Remove a running MyOS environment
+
 ## Features
 
 * Python 2 and 3
@@ -73,3 +122,12 @@ $ myos connect rysetup
 * Does not run as PID 1
 * Non-root user
 * Uses ssh as entry allowing display server and remote usage
+
+
+## Notes
+
+* CLI currently written in NodeJS as convenience, open to switching to shell or python based CLI
+* Very opinionated towards VIM currently, plan to support Emacs and other varities down the road
+* Plan to add a CLI command to natively download and try another users setup
+* Plan to improve design to allow for multiple MyOS setups on the same machine
+* Plan to auto-gen ssh key instead of requiring `authorized_keys`

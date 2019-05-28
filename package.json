@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A fully dockerized development environment",
   "main": "index.js",
+  "bin": {
+    "bn": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,12 +14,12 @@
     "url": "git+https://github.com/rylandg/myos.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ryland Goldstein",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rylandg/myos/issues"
   },
-  "homepage": "https://github.com/rylandg/myos#readme",
+  "homepage": "https://github.com/rylandg/myos#Readme",
   "dependencies": {
     "fs-extra": "^8.0.1",
     "mz": "^2.7.0",

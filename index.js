@@ -67,6 +67,7 @@ async function init({ dir }) {
     copy(join(__dirname, dOrF),  join(dir, dOrF), basicOpts)));
 }
 
+// async function install(options) {}
 // async function login(options) {}
 // async function commit(options) {}
 // async function push(options) {}

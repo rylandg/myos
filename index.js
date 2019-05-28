@@ -52,37 +52,21 @@ async function remove(options) {
 }
 
 async function init({ dir }) {
-  function blacklist(src, dest) {
-    if (src.includes('tmux_saves')) {
-      return false;
-    }
-    return true;
-  }
   const basicOpts = {
-    filter: blacklist,
+    filter: (src, dest) => {
+      if (src.includes('tmux_saves')) {
+        return false;
+      }
+      return true;
+    },
     overwrite: false,
     errorOnExist: true,
   };
   const copyFiles = ['vim', 'zsh', 'tmux', 'docker-compose.yml'];
   await Promise.all(copyFiles.map((dOrF) =>
     copy(join(__dirname, dOrF),  join(dir, dOrF), basicOpts)));
-  // for (let i = 0; i < copyFiles.length; i += 1) {
-  //   await fse.copy(join(__dirname, 'vim'), join(options.dir, 'vim'), {
-  //     overwrite: false, errorOnExist: true
-  //   });
-  // }
-
-  // await fse.copy(join(__dirname, 'zsh'), join(options.dir, 'zsh') {
-  //   overwrite: false, errorOnExist: true
-  // });
-  // await fse.copy(join(__dirname, 'tmux'), join(options.dir,  {
-  //   overwrite: false, errorOnExist: true
-  // });
-  // await fse.copy(join(__dirname, 'docker-compose.yml'), options.dir, {
-  //   overwrite: false, errorOnExist: true
-  // });
-  // process.cwd()
 }
+
 // async function login(options) {}
 // async function commit(options) {}
 // async function push(options) {}

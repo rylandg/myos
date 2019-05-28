@@ -4,3 +4,4 @@ zsh/.zhistory
 *.zwc
 tmux/tmux_saves
 *.zwc.old
+tmux/tmux_saves/*

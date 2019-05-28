@@ -44,11 +44,19 @@ async function connect(options) {
 async function create(options) {
   envIfSet('TAG', options.tag);
   envIfSet('NAME', options.instanceName);
-  return execAsync('docker-compose up -d');
+  const { stdout, stderr, error } = await execAsync('docker-compose up -d');
+  if (error) {
+    throw error;
+  }
+  console.log(stdout || stderr);
 }
 
 async function remove(options) {
-  return execAsync('docker-compose down');
+  const { stderr, stdout, error } = await execAsync('docker-compose down');
+  if (error) {
+    throw error;
+  }
+  console.log(stdout || stderr);
 }
 
 async function init({ dir }) {
@@ -65,6 +73,7 @@ async function init({ dir }) {
   const copyFiles = ['vim', 'zsh', 'tmux', 'docker-compose.yml'];
   await Promise.all(copyFiles.map((dOrF) =>
     copy(join(__dirname, dOrF),  join(dir, dOrF), basicOpts)));
+  console.log(`Created template directory @ "${dir}"`);
 }
 
 // async function install(options) {}

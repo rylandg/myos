@@ -6,6 +6,8 @@
 
 [Dockerhub](https://cloud.docker.com/repository/docker/rylandg/myos)
 
+If you want your environment listed in the showcase, please submit a PR
+
 ## High Level
 
 Uses Docker + Docker Compose to provide a consistent and reproducible build environment. Base image assumes the minimum while still being useful out of the box.

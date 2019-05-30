@@ -1,5 +1,7 @@
 # MyOS - develop and share command line environments
 
+![](https://www.cdevn.com/assets/static/myos.e903f9a.3875bee.png)
+
 [Blog post about MyOS](https://cdevn.com/my-os)
 
 [Dockerhub](https://cloud.docker.com/repository/docker/rylandg/myos)

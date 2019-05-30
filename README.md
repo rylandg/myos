@@ -16,6 +16,8 @@ Everything depends on `myos` base Docker image. This image is available on Docke
 
 The default `docker-compose.yml` mounts your hosts `~/.ssh/authorized_keys` file into the running container. This is what allows the openSSH server to authenticate you when you connect. This means you will need an `authorized_keys` file in the correct location with any keys you want to be able to use.
 
+> OSX Users: For display forwarding to work, you'll need to have [X11 Quartz](http://osxdaily.com/2012/12/02/x11-mac-os-x-xquartz/). It's crappy and I'd love to find an alternative.
+
 > Ctrl-D is the most sure fire way of getting out of the container
 
 ### Setup

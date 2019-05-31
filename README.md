@@ -1,5 +1,7 @@
 # MyOS - develop and share command line environments
 
+> If you like the project, please remember to star it so we can grow the community!
+
 ![](https://www.cdevn.com/assets/static/myos.e903f9a.3875bee.png)
 
 [Blog post about MyOS](https://cdevn.com/my-os)

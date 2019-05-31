@@ -1,6 +1,6 @@
 {
   "name": "myos",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A fully dockerized development environment",
   "main": "index.js",
   "bin": {

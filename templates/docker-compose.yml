@@ -1,8 +1,7 @@
 version: "3.7"
 services:
   myos:
-    container_name: '${NAME:-default}'
-    image: 'rylandg/myos:${TAG:-latest}'
+    image: "rylandg/myos:${TAG:-latest}"
     tty: true
     volumes:
       -  "/var/run/docker.sock:/var/run/docker.sock"
@@ -17,7 +16,7 @@ services:
       -  "./tmux/tmux_saves:/home/ubuntu/.tmux_saves"
       -  "./vim:/home/ubuntu/.vim_runtime:delegated"
     ports:
-      - "2222:22"
+      - "22"
 volumes:
   volume-name:
     driver: local

@@ -37,7 +37,7 @@ The default `docker-compose.yml` mounts your hosts `~/.ssh/authorized_keys` file
 1. Alias the CLI or add it to your `PATH`
 
     ```bash
-    alias myos="/path/to/myos/repo"
+    alias myos="/path/to/myos/repo/myos.sh"
     ```
 
 1. Create a template environment with empty config files

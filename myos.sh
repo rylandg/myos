@@ -6,6 +6,7 @@ initHelp="init <envName> [options]"
 createHelp="create <envName> [options]"
 connectHelp="connect <envName> [options]"
 removeHelp="remove <envName> [options]"
+restartHelp="restart <envName> [options]"
 
 die () {
     echo >&2 "$@"
@@ -54,6 +55,17 @@ elif [ $command = "remove" ]; then
   enforceArgs $# 2 $removeHelp
   args="COMPOSE_PROJECT_NAME=$2"
   export $args && docker-compose down
+elif [ $command = "restart" ]; then
+  enforceArgs $# 2 $restartHelp
+  args="COMPOSE_PROJECT_NAME=$2"
+  if [ "$#" -ge 3 ]; then
+    args="$args NAME=$3"
+  fi
+  if [ "$#" -ge 4 ]; then
+    args="$args TAG=$4"
+  fi
+  export $args && docker-compose down
+  export $args && docker-compose up -d
 elif [ $command = "connect" ]; then
   enforceArgs $# 2 $connectHelp
   socket=$(docker port "$2_myos_1" 22)

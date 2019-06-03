@@ -113,7 +113,7 @@ These files are empty (for the most part). You're expected to add your environme
 Runs `docker-compose up -d` from the current directory
 
 ### Connect
-`myos connect`
+`myos connect <envName>`
 
 Connects to a previously created MyOS environment
 

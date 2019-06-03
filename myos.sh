@@ -1,5 +1,6 @@
 #!/bin/sh -e -u
 
+MYOS_DIR=~/.myos
 MYOS_USER="ubuntu"
 
 initHelp="init <envName> [options]"
@@ -11,6 +12,15 @@ restartHelp="restart <envName> [options]"
 die () {
     echo >&2 "$@"
     exit 1
+}
+
+addAuthorizedKey () {
+  if [ ! -f $MYOS_DIR/authorized_keys ]; then
+    mkdir -p $MYOS_DIR
+    ssh-keygen -f $MYOS_DIR/myos-key -t rsa -N ''
+    cp $MYOS_DIR/myos-key.pub $MYOS_DIR/authorized_keys
+  fi
+  ssh-add $MYOS_DIR/myos-key
 }
 
 unknownCommand () {
@@ -43,6 +53,7 @@ elif [ $command = "build" ]; then
   docker build -t myos:$tag .
 elif [ $command = "create" ]; then
   enforceArgs $# 2 $createHelp
+  addAuthorizedKey
   args="COMPOSE_PROJECT_NAME=$2"
   if [ "$#" -ge 3 ]; then
     args="$args NAME=$3"
@@ -68,6 +79,7 @@ elif [ $command = "restart" ]; then
   export $args && docker-compose up -d
 elif [ $command = "connect" ]; then
   enforceArgs $# 2 $connectHelp
+  addAuthorizedKey
   socket=$(docker port "$2_myos_1" 22)
   port="$(cut -d':' -f2 <<<$socket)"
   shift 2

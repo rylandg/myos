@@ -83,6 +83,7 @@ RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 RUN adduser --disabled-password --shell /usr/bin/zsh --gecos '' $DEFAULT_USER
 RUN adduser $DEFAULT_USER sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN runuser -l $DEFAULT_USER -c 'mkdir -p $USER_HOME/.ssh'
 
 SHELL ["/usr/bin/zsh", "-c"]
 

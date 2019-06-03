@@ -6,7 +6,7 @@ services:
     volumes:
       -  "/var/run/docker.sock:/var/run/docker.sock"
       # Default copy all ssh config at home of local to remote
-      -  "~/.ssh/:/home/ubuntu/.ssh"
+      -  "~/.myos/authorized_keys/:/home/ubuntu/.ssh/authorized_keys"
       # Default copy all git config at home of local to remote
       -  "~/.gitconfig/:/home/ubuntu/.gitconfig"
       # Use project-local zsh, tmux and vim settings

@@ -54,7 +54,7 @@ RUN apt-get install -y                               \
 
 
 # TMUX binary always screws me, just build from source
-ADD ./tmux/install_tmux.sh ./
+ADD ./templates/tmux/install_tmux.sh ./
 RUN ./install_tmux.sh && rm -f ./install_tmux.sh
 
 #########################################################################

@@ -23,6 +23,7 @@ RUN apt-get install -y                               \
                           software-properties-common \
                           curl                       \
                           sudo                       \
+                          nano                       \                          
                           vim-gtk3
 
 

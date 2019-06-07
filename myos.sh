@@ -1,4 +1,4 @@
-#!/bin/sh -e -u
+#!/bin/sh -eu
 
 MYOS_DIR=~/.myos
 MYOS_USER="ubuntu"
@@ -39,7 +39,7 @@ enforceArgs $# 1 "MyOS"
 
 command=$1
 # cross-platform dir resolution
-myosPath="$( cd "$(dirname  "${BASH_SOURCE[0]}")" ; pwd -P )"
+myosPath="$( cd "$(dirname  "$0")" ; pwd -P )"
 # follows symlink
 scriptName="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
 scriptPath="$myosPath/$scriptName"
@@ -81,7 +81,7 @@ elif [ $command = "connect" ]; then
   enforceArgs $# 2 $connectHelp
   addAuthorizedKey
   socket=$(docker port "$2_myos_1" 22)
-  port="$(cut -d':' -f2 <<<$socket)"
+  port="$(echo "$socket" | cut -d':' -f2)"
   shift 2
   sshArgs="$@ -Y -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $port"
   ssh $sshArgs $MYOS_USER@localhost

@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Discord](https://img.shields.io/discord/586605046758637569.svg)](https://discord.gg/XXTvhdv)
 # MyOS - Develop and Share Linux Environments
 
 > If you like the project, please remember to star it so we can grow the community!

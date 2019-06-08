@@ -2,6 +2,7 @@
 
 MYOS_DIR=~/.myos
 MYOS_USER="ubuntu"
+SUDO=$(if docker info 2>&1 | grep "permission denied" >/dev/null; then echo "sudo -E"; fi)
 
 initHelp="init <envName> [options]"
 createHelp="create <envName> [options]"
@@ -61,11 +62,11 @@ elif [ $command = "create" ]; then
   if [ "$#" -ge 4 ]; then
     args="$args TAG=$4"
   fi
-  export $args && docker-compose up -d
+  export $args && $SUDO docker-compose up -d
 elif [ $command = "remove" ]; then
   enforceArgs $# 2 $removeHelp
   args="COMPOSE_PROJECT_NAME=$2"
-  export $args && docker-compose down
+  export $args && $SUDO docker-compose down
 elif [ $command = "restart" ]; then
   enforceArgs $# 2 $restartHelp
   args="COMPOSE_PROJECT_NAME=$2"
@@ -75,12 +76,12 @@ elif [ $command = "restart" ]; then
   if [ "$#" -ge 4 ]; then
     args="$args TAG=$4"
   fi
-  export $args && docker-compose down
-  export $args && docker-compose up -d
+  export $args && $SUDO docker-compose down
+  export $args && $SUDO docker-compose up -d
 elif [ $command = "connect" ]; then
   enforceArgs $# 2 $connectHelp
   addAuthorizedKey
-  socket=$(docker port "$2_myos_1" 22)
+  socket=$($SUDO docker port "$2_myos_1" 22)
   port="$(echo "$socket" | cut -d':' -f2)"
   shift 2
   sshArgs="$@ -Y -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $port"

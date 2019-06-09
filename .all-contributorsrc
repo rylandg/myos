@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dimensi0n",
+      "name": "Erwan ROUSSEL",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25726586?v=4",
+      "profile": "https://github.com/dimensi0n",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "myos",
+  "projectOwner": "rylandg",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}

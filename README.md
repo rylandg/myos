@@ -1,4 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Discord](https://img.shields.io/discord/586605046758637569.svg)](https://discord.gg/XXTvhdv)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 # MyOS - Develop and Share Linux Environments
 
 > If you like the project, please remember to star it so we can grow the community!
@@ -152,3 +153,15 @@ Remove a running MyOS environment
 
 * Very vim focused, would like to see if its possible to support other editors (definitely Emacs)
 * Needs CLI command that allows you to copy another users MyOS environment
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://github.com/dimensi0n"><img src="https://avatars3.githubusercontent.com/u/25726586?v=4" width="100px;" alt="Erwan ROUSSEL"/><br /><sub><b>Erwan ROUSSEL</b></sub></a><br /><a href="https://github.com/rylandg/myos/commits?author=dimensi0n" title="Documentation">📖</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

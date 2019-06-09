@@ -6,7 +6,7 @@
 #========================================================
 
 # Declaring environment variable such as :
-# - MYOS_DIR : MyOs ssh keys location.
+# - MYOS_DIR : MyOS ssh keys location.
 # - MYOS_USER : Name of the environment's user.
 # - SUDO : Check if sudo is needed to run docker.
 MYOS_DIR=~/.myos
@@ -20,7 +20,7 @@ connectHelp="connect <envName> [options]"
 removeHelp="remove <envName> [options]"
 restartHelp="restart <envName> [options]"
 
-# What to do if there is an errer
+# What to do if there is an error
 die () {
     echo >&2 "$@"
     exit 1
@@ -36,7 +36,6 @@ addAuthorizedKey () {
     ssh-add $MYOS_DIR/myos-key
 }
 
-# What to do if the command is unknown
 unknownCommand () {
     echo "$1" not recognized!
     exit 1
@@ -56,7 +55,7 @@ enforceArgs $# 1 "MyOS"
 # - Example : "myos create" -> set the command to "create".
 command=$1
 
-# Set the path to myos
+# Set the path to myos.sh
 myosPath="$( cd "$(dirname  "$0")" ; pwd -P )"
 
 # Set the script name and its path
@@ -65,7 +64,7 @@ scriptPath="$myosPath/$scriptName"
 
 # Declaring commands :
 # - Init : Creates the initial templates that the default docker-compose.yml expects.
-# - Build : Build the official MyOs image.
+# - Build : Build the official MyOS image.
 # - Create : Generate ssh key and run docker-compose up -d from the current directory.
 # - Remove : Remove a running MyOS environment.
 # - Restart : Restart a previously created MyOS environment.

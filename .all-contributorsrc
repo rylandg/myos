@@ -13,6 +13,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "benyanke",
+      "name": "Ben Yanke",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4274911?v=4",
+      "profile": "https://benyanke.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

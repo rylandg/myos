@@ -31,6 +31,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "tokelove",
+      "name": "Aaron Tokelove",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2603109?v=4",
+      "profile": "https://toke.love",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

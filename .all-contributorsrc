@@ -59,6 +59,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "lvm",
+      "name": "Mauro",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/34095?v=4",
+      "profile": "http://lvm.github.io",
+      "contributions": [
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,

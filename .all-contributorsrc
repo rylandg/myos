@@ -50,6 +50,15 @@
         "projectManagement",
         "blog"
       ]
+    },
+    {
+      "login": "muniter",
+      "name": "Javier Lopez",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9699804?v=4",
+      "profile": "https://github.com/muniter",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
